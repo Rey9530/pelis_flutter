@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:peliculas/src/widgets/card_swipe_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,22 +30,6 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _swiperTarjetas() {
-    return Container(
-      width: double.infinity,
-      height: 300.00,
-      child: Swiper(
-        itemBuilder: (BuildContext context, int index) {
-          return new Image.network(
-            "http://via.placeholder.com/350x150",
-            fit: BoxFit.fill,
-          );
-        },
-        itemCount: 3,
-        itemWidth: 200.0,
-        //pagination: new SwiperPagination(),
-        //control: new SwiperControl(),
-        layout: SwiperLayout.STACK,
-      ),
-    );
+    return CardSwiper(peliculas: [1, 2, 3, 4, 5]);
   }
 }
